@@ -18,7 +18,7 @@ public class GravityController : MonoBehaviour
         {
             vector.x = Input.acceleration.x;
             vector.z = Input.acceleration.y;
-            vector.y = Input.acceleration.z;
+            vector.y = -1.0f;
         }
         else
         {

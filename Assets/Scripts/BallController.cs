@@ -18,9 +18,19 @@ public class BallController : MonoBehaviour
     {
         if (rigidbody.velocity.y == 0)
         {
-            if (Input.GetButton("Jump"))
+            if (Application.isMobilePlatform)
             {
-                rigidbody.velocity = new Vector3(0, jumppower, 0);
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    rigidbody.velocity = new Vector3(0, jumppower, 0);
+                }
+            }
+            else
+            {
+                if (Input.GetButtonDown("Jump"))
+                {
+                    rigidbody.velocity = new Vector3(0, jumppower, 0);
+                }
             }
         }
     }
