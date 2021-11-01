@@ -7,6 +7,7 @@ public class BallController : MonoBehaviour
     Rigidbody rigidbody;
 
     public float jumppower = 10;
+    public GameClearDetector gameClear;
 
     void Start()
     {
@@ -16,7 +17,7 @@ public class BallController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rigidbody.velocity.y == 0)
+        if (rigidbody.velocity.y == 0 && !gameClear.IsClear())
         {
             if (Application.isMobilePlatform)
             {
